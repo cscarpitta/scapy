@@ -37,7 +37,7 @@ from scapy.as_resolvers import AS_resolver_riswhois
 from scapy.base_classes import Gen
 from scapy.compat import chb, orb, raw, plain_str, bytes_encode
 from scapy.config import conf
-from scapy.data import DLT_IPV6, DLT_RAW, DLT_RAW_ALT, ETHER_ANY, ETH_P_IPV6, \
+from scapy.data import ARPHRD_NONE, DLT_IPV6, DLT_RAW, DLT_RAW_ALT, ETHER_ANY, ETH_P_IPV6, \
     MTU
 from scapy.error import warning
 from scapy.fields import BitEnumField, BitField, ByteEnumField, ByteField, \
@@ -4031,6 +4031,7 @@ conf.l2types.register(31, IPv6)
 conf.l2types.register(DLT_IPV6, IPv6)
 conf.l2types.register(DLT_RAW, _IPv46)
 conf.l2types.register_num2layer(DLT_RAW_ALT, _IPv46)
+conf.l2types.register_num2layer(ARPHRD_NONE, IPv46)
 
 bind_layers(Ether, IPv6, type=0x86dd)
 bind_layers(CookedLinux, IPv6, proto=0x86dd)
