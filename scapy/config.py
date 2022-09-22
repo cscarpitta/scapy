@@ -875,6 +875,7 @@ class Conf(ConfClass):
         'smbclient',
         'smbserver',
         'snmp',
+        'stamp',
         'tftp',
         'vrrp',
         'vxlan',
